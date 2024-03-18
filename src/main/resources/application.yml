@@ -1,0 +1,23 @@
+spring:
+  application.name: demo
+  cloud:
+    config:
+      enabled: false
+  threads:
+    virtual:
+      enabled: true
+cloud:
+  aws:
+    region:
+      static:
+        sa-east-1
+  docker:
+    compose:
+      enabled: true
+    autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
+events:
+  topic: notification-topic
+  queue: notification-queue
